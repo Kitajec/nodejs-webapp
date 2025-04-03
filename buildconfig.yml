@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: nodejs-builder-image
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: nodejs-builder-image:latest
+  source:
+    git:
+      uri: https://github.com/Kitajec/nodejs-webapp.git
+      ref: main
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: nodejs:18-ubi8
+        namespace: openshift
