@@ -1,4 +1,4 @@
-FROM registry.redhat.io/ubi8/nodejs-18-minimal:latest
+FROM registry.redhat.io/rhel9/nodejs-18-minimal:9.5-1742941545
 
 COPY webapp.js /opt/app-root/src/webapp.js
 
